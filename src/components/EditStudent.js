@@ -6,7 +6,7 @@ const EditStudent = (props) => {
     // Create state variables to hold the edited values
     const [editedName, setEditedName] = useState(name);
     const [editedEmail, setEditedEmail] = useState(email);
-    const [editedStatusCode, setEditedStatusCode] = useState(statusCode);
+    const [editedStatus, setEditedStatus] = useState(status);
   
     // Handle form submission
     const handleSubmit = (e) => {
@@ -19,8 +19,8 @@ const EditStudent = (props) => {
         studentId,
         name: editedName,
         email: editedEmail,
-        statusCode: editedStatusCode, // Update the statusCode with the edited value
-        status,
+        statusCode, // Update the statusCode with the edited value
+        status: editedStatus,
       };
   
       // Call a function to update the student data in the parent component
@@ -48,11 +48,11 @@ const EditStudent = (props) => {
             />
           </div>
           <div>
-            <label>StatusCode:</label>
+            <label>Status:</label>
             <input
               type="text"
-              value={editedStatusCode}
-              onChange={(e) => setEditedStatusCode(e.target.value)}
+              value={editedStatus}
+              onChange={(e) => setEditedStatus(e.target.value)}
             />
           </div>
           <button type="submit">Save</button>
